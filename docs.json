@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "English",
         "groups": [
           {
             "group": "Getting started",
@@ -48,21 +48,27 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "简体中文",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "快速开始",
             "pages": [
-              "api-reference/introduction"
+              "zh-cn/index",
+              "zh-cn/quickstart",
+              "zh-cn/development"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "繁體中文",
+        "groups": [
           {
-            "group": "Endpoint examples",
+            "group": "快速開始",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "zh-tw/index",
+              "zh-tw/quickstart",
+              "zh-tw/development"
             ]
           }
         ]
