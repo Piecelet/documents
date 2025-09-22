@@ -11,6 +11,7 @@
 (function () {
   var TW_SVG = 'https://purecatamphetamine.github.io/country-flag-icons/1x1/TW.svg';
   var CN_SVG = 'https://purecatamphetamine.github.io/country-flag-icons/1x1/CN.svg';
+  var US_SVG = 'https://purecatamphetamine.github.io/country-flag-icons/1x1/US.svg';
 
   function textOf(el) {
     if (!el) return '';
@@ -31,6 +32,11 @@
     return /\bzh[-_]?hans\b/.test(str) || str.includes('简体中文') || str.includes('simplified chinese');
   }
 
+  function isEnglishLabel(str) {
+    if (!str) return false;
+    return /\ben(glish)?\b/.test(str);
+  }
+
   function setFlagIn(el, target) {
     // Only update images inside the exact element representing the matched language option
     var imgs = el.querySelectorAll('img');
@@ -39,7 +45,7 @@
       var alt = (img.getAttribute('alt') || '').trim();
       var isFlag = /country-flag-icons/.test(src) || /\/(CN|TW)\.svg$/i.test(src);
       if (!isFlag) return;
-      var wantSvg = target === 'TW' ? TW_SVG : CN_SVG;
+      var wantSvg = target === 'TW' ? TW_SVG : target === 'US' ? US_SVG : CN_SVG;
       var wantAlt = target;
       var isCorrect = new RegExp('/' + target + '\\.svg$', 'i').test(src) || alt === wantAlt;
       if (!isCorrect) {
@@ -60,8 +66,10 @@
       var langAttr = (el.getAttribute('data-lang') || el.getAttribute('data-language') || el.getAttribute('lang') || '').toLowerCase();
       var isTrad = isTraditionalLabel(label) || /\bzh[-_]?hant\b/.test(langAttr);
       var isSimp = isSimplifiedLabel(label) || /\bzh[-_]?hans\b/.test(langAttr);
+      var isEng = isEnglishLabel(label) || /\ben\b/.test(langAttr);
       if (isTrad) setFlagIn(el, 'TW');
       if (isSimp) setFlagIn(el, 'CN');
+      if (isEng) setFlagIn(el, 'US');
     });
   }
 
