@@ -9,45 +9,6 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      }
-    ],
     "global": {
       "anchors": [
         {
@@ -61,7 +22,51 @@
           "icon": "newspaper"
         }
       ]
-    }
+    },
+    "languages": [
+      {
+        "language": "en",
+        "dropdowns": [
+          {
+            "dropdown": "Documentation",
+            "icon": "book",
+            "description": "Guides and help for the app",
+            "pages": [
+              { "group": "Getting started", "pages": ["index", "quickstart", "development"] },
+              { "group": "Customization", "pages": ["essentials/settings", "essentials/navigation"] },
+              { "group": "Writing content", "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/reusable-snippets"] },
+              { "group": "AI tools", "pages": ["ai-tools/cursor", "ai-tools/claude-code", "ai-tools/windsurf"] }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "zh-Hans",
+        "dropdowns": [
+          {
+            "dropdown": "帮助中心",
+            "icon": "book",
+            "description": "应用的使用指南与帮助",
+            "pages": [
+              { "group": "快速开始", "pages": ["zh-Hans/index", "zh-Hans/quickstart", "zh-Hans/development"] }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "zh-Hant",
+        "dropdowns": [
+          {
+            "dropdown": "說明中心",
+            "icon": "book",
+            "description": "應用程式的使用指南與說明",
+            "pages": [
+              { "group": "快速開始", "pages": ["zh-Hant/index", "zh-Hant/quickstart", "zh-Hant/development"] }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -69,9 +74,6 @@
   },
   "navbar": {
     "links": [
-      { "label": "EN", "href": "/" },
-      { "label": "简体中文", "href": "/zh-cn" },
-      { "label": "繁體中文", "href": "/zh-tw" },
       { "label": "Support", "href": "mailto:hi@mintlify.com" }
     ],
     "primary": {
